@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background: rgb(19, 41, 75);
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2, h3, p {
+  font-family: "Karla", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p, button {
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Start Page */
+
+.intro {
+  text-align: center;
+  color: white;
+}
+
+.intro-title {
+  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+}
+
+.intro-desc {
+  margin-bottom: 1.75rem;
+  color: rgb(192, 192, 192);
+}
+
+.start-btn {
+  border: 0;
+  color: white;
+  background: rgb(75, 156, 211);
+  border-radius: 15px;
+  padding: 0.75rem 3rem;
+}
+
+/* Trivia Page */
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border: 3px dashed rgb(216, 216, 216);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: rgb(75, 156, 211);
+  border: 3px solid rgb(75, 156, 211);
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  font-family: "Inter", sans-serif;
+  flex: 0 1 auto;
+}
+
+input[type="radio"]:checked+label {
+  background: rgb(255, 255, 255);
+  color: rgb(75, 156, 211);
+  font-weight: 700;
+}
+
+.checked {
+  background: rgb(255, 255, 255);
+  color: rgb(75, 156, 211);
+  font-weight: 700
+}
+
+.question-page {
+  text-align: center;
+  max-width: 768px;
+  color: rgb(255, 255, 255);
+}
+
+.question-container {
+  text-align: center;
+}
+
+.question-text {
+  margin-bottom: 1.75rem;
+}
+
+.choices-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.trivia-btn {
+  border: 0;
+  background: rgb(75, 156, 211);
+  color: white;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.625rem;
+  font-size: 1rem;
+}
+
+.results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.correct-answer {
+  background: rgb(41, 163, 67);
+  font-weight: 700;
+  border: none;
+  color: white;
+}
+
+.wrong-answer {
+  background: rgb(201, 30, 30);
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+
+.faded {
+  opacity: 0.4;
+}
