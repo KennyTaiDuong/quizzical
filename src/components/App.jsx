@@ -9,6 +9,7 @@ import { decode } from "html-entities";
 export default function App() {
   const [started, toggleStarted] = useState(false);
   const [checkedAnswers, setCheckedAnswers] = useState(false);
+  const [difficulty, setDifficulty] = useState("");
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [shuffledChoices, setShuffledChoices] = useState([]);
@@ -19,8 +20,6 @@ export default function App() {
     question3: "",
     question4: "",
   });
-
-  // console.log(userChoice);
 
   function handleStartBtn() {
     toggleStarted((prevState) => !prevState);
@@ -46,7 +45,7 @@ export default function App() {
   useEffect(() => {
     async function fetchQuestions() {
       const res = await fetch(
-        "https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple"
+        `https://opentdb.com/api.php?amount=5&category=21&difficulty=${difficulty}&type=multiple`
       );
       const data = await res.json();
       setQuestions(data.results);
@@ -95,7 +94,12 @@ export default function App() {
 
   return (
     <div>
-      {!started && <Intro isStarted={() => handleStartBtn()} />}
+      {!started && (
+        <Intro
+          isStarted={() => handleStartBtn()}
+          setDifficulty={(diff) => setDifficulty(diff)}
+        />
+      )}
       {started && (
         <div className="question-page">
           {cardElements}
